@@ -1,0 +1,633 @@
+@import url('https://fonts.cdnfonts.com/css/fox-on-the-run');
+@import url('https://fonts.cdnfonts.com/css/earth-orbiter');
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital@1&display=swap');
+
+
+/* Diseños basicos para la pagina y contenedores */
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #151E3F;
+    user-select: none;
+}
+
+
+body{
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+/* Diseño para la scrollbar */
+body::-webkit-scrollbar{
+    width: 15px;
+    transition: all 2s ease;
+}
+
+body::-webkit-scrollbar-thumb{
+    background: #ffffff19;
+    border-radius: 50px;
+}
+
+body::-webkit-scrollbar-thumb:hover{
+    background: #d596ef2a;
+}
+
+:root{
+    --color-fondo: #151E3F;
+}
+
+
+.contenedor{
+    position: relative;
+    display: flex;
+    height: 100%;
+    gap: 100px 100px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+}
+
+
+.btn{
+    position: relative;
+    padding: 20px 50px;
+    text-decoration: none;
+    color: #fff;
+    letter-spacing: 10px;
+    text-indent: 10px;
+    z-index: 2;
+    touch-action: none;
+    background: none;
+}
+
+
+.decoracion-pagina{
+    position: absolute;
+    z-index: 0;
+    filter: blur(20px);
+    pointer-events: none;
+    opacity: .4;
+}
+
+.decoracion-pagina-1{
+    width: 300px;
+    height: 300px;
+    background: rgb(32,224,213);
+    background: linear-gradient(90deg, rgba(32,224,213,1) 0%,
+    rgba(21,196,247,1) 50%, rgba(69,252,109,1) 100%);
+    border-radius: 100px;
+    transform: rotate(45deg);
+    left: 10px;
+    top: 1px;
+}
+
+
+.decoracion-pagina-2{
+    width: 200px;
+    height: 200px;
+    background: rgb(176,88,231);
+    background: linear-gradient(90deg, rgba(176,88,231,1) 0%
+    , rgba(232,55,136,1) 50%, rgba(249,213,80,1) 100%);
+    border-radius: 50%;
+    transform: rotate(45deg);
+    left: 1100px;
+    top: 90px;
+}
+
+.decoracion-pagina-3{
+    width: 350px;
+    height: 350px;
+    background: rgb(199,116,168);
+    background: linear-gradient(90deg, rgba(199,116,168,1) 0%,
+    rgba(137,82,255,1) 50%, rgba(60,246,12,1) 100%);
+    border-radius: 50px;
+    transform: rotate(69deg);
+    left: 300px;
+    top: 450px;
+}
+
+
+/* Diseños de los botones y con su enumeracion */
+
+/* boton 49 */
+
+.btn-49{
+    position: relative;
+    width: 220px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(14, 8, 8);
+    overflow: hidden;
+    border-radius: 5px;
+    transition: all 1.5s ease;
+    font-family: 'Fox on the Run', sans-serif; 
+    font-size: 18px;
+    border-color:rgb(226, 4, 4,0);
+}
+
+.btn-49:hover{
+    box-shadow: 0px 0px 20px rgb(226, 4, 4);
+    color: rgb(226, 4, 4);
+    letter-spacing: 15px;
+    text-shadow: 0px 0px 20px rgb(250, 1, 1);
+}
+
+
+.btn-49::after{
+    content:'';
+    position: absolute;
+    left: -180px;
+    top: 0px;
+    width: 80%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent,#fc0606);
+}
+
+
+.btn-49::before{
+    content:'';
+    position: absolute;
+    right: -180px;
+    bottom: 0px;
+    width: 80%;
+    height: 2px;
+    background: linear-gradient(260deg, transparent,#fc0606);
+}
+
+.btn-49:hover::after{
+    animation: btn-49-after-ani .6s ease-out forwards;
+}
+
+.btn-49:hover::before{
+    animation: btn-49-before-ani .6s ease-out forwards;
+}
+
+
+@keyframes btn-49-after-ani{
+    0%{
+        transform: translateX(0);
+    }
+
+    100%{
+        transform: translateX(500px);
+    }
+}
+
+@keyframes btn-49-before-ani{
+    0%{
+        transform: translateX(0);
+    }
+
+    100%{
+        transform: translateX(-500px);
+    }
+}
+
+
+
+/* boton 50 */
+
+.btn-50{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    height: 70px;
+    background: rgb(124, 123, 123);
+    overflow: hidden;
+    transition: all  ease-out;
+    font-size: 18px;
+    font-family: 'Cabin', sans-serif;
+    transition: all  linear;
+}
+
+
+.btn-50-img{
+    position: absolute;
+    background-repeat: no-repeat;
+    background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .1s ease-out;
+    pointer-events: none;
+    z-index: 3;
+}
+
+
+
+.btn-50-img-disparo{
+    animation: btn-50-disparo .5s ease-out;
+}
+
+@keyframes btn-50-disparo{
+    0%{
+        background-position: 0px 0px;
+    }
+
+    100%{
+        background-position: -100px  -100px;
+    }
+}
+
+
+.btn-50-span{
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    left: 0px;
+    top: 0px;
+    border-radius: 50%;
+    background-color: rgb(255, 34, 0);
+    z-index: 2;
+    box-shadow: 0px 0px 10px rgb(255, 4, 4), 0px 0px 10px rgb(255, 48, 2),
+    0px 0px 10px rgb(255, 48, 2), 0px 0px 10px rgb(255, 48, 2);
+    opacity: 0;
+}
+
+
+.btn-50-span-disparo{
+    animation: btn-50-bala 1.5s ease forwards;
+    opacity: 1;
+}
+
+@keyframes btn-50-bala{
+    0%{
+        background-color: rgb(255, 34, 0);
+    }
+
+    70%{
+        background-color: rgb(36, 17, 14);
+    }
+
+    100%{
+        opacity: 0;
+    }
+}
+
+
+
+/* boton 51 */
+
+
+.btn-51-contenedor{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    height: 60px;
+    overflow: hidden;
+}
+
+
+.btn-51{
+    background: none;
+    font-size: 16px;
+    pointer-events: none;
+    z-index: 4;
+}
+
+.btn-51-span1,
+.btn-51-span2{
+    transition: all .8s ease-out;
+}
+
+.btn-51-span1{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 50%;
+    height: 100%;
+    background-color: #16a922;
+}
+
+
+.btn-51-si-1,
+.btn-51-si-2{
+    width: 20px;
+    height: 3px;
+    background-color: #0a7913;
+    z-index: 4;
+    transition: all .5s ease-out;
+    cursor: pointer;
+}
+
+.btn-51-si-1{
+    position: absolute;
+    top: 33px;
+    left: 10px;
+}
+
+.btn-51-si-2{
+    position: absolute;
+    top: 25px;
+    left: 10px;
+}
+
+.btn-51-si-1-activado{
+    transform: rotate(45deg);
+    width: 13px;
+    top: 30px;
+    left: 8px;
+}
+
+.btn-51-si-2-activado{
+    transform: rotate(-45deg);
+    top: 28px;
+    left: 14px;
+}
+
+
+
+.btn-51-span2{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 50%;
+    height: 100%;
+    background-color: #c21111;
+}
+
+
+.btn-51-no-1,
+.btn-51-no-2{
+    width: 20px;
+    height: 3px;
+    background-color: #9b0a0a;
+    z-index: 4;
+    transition: all .5s ease-out;
+    cursor: pointer;
+}
+
+.btn-51-no-1{
+    position: absolute;
+    top: 33px;
+    right: 10px;
+}
+
+.btn-51-no-2{
+    position: absolute;
+    top: 25px;
+    right: 10px;
+}
+
+.btn-51-no-1-activado{
+    transform: rotate(45deg);
+    top: 30px;
+}
+
+.btn-51-no-2-activado{
+    transform: rotate(-45deg);
+    top: 29px;
+}
+
+
+
+.btn-51-span1-abierto{
+    width: 75%;
+    z-index: 2;
+}
+
+.btn-51-span1-cerrado{
+    width: 25%;
+}
+
+
+.btn-51-span2-abierto{
+    width: 80%;
+}
+
+.btn-51-span2-cerrado{
+    width: 25%;
+}
+
+
+.btn-51-span1-cont:hover .btn-51-si-1-activado,
+.btn-51-span1-cont:hover .btn-51-si-2-activado{
+    background-color: #0ddf1e;
+    box-shadow: 0px 0px 10px #0ddf1e;
+    
+}
+
+.btn-51-span2-cont:hover .btn-51-no-1-activado,
+.btn-51-span2-cont:hover .btn-51-no-2-activado{
+    background-color: #ff1313;
+    box-shadow: 0px 0px 10px #ff1313;
+}
+
+
+
+
+/* boton 52 */
+
+
+.btn-52{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    height: 60px;
+    border: 2px solid rgb(18, 18, 51);
+    border-radius: 25px;
+    font-family: 'Earth Orbiter', sans-serif;
+    font-size: 23px;
+    letter-spacing: 15px;
+    color: rgb(40, 23, 9);
+}
+
+
+:root{
+    --btn52-cartel:rgb(34, 89, 253);
+    --btn52-catel-ilu:rgb(23, 42, 251);
+    --btn52-letras:rgb(255, 173, 96);
+    --btn52-letras-ilu:rgb(249, 43, 2);
+
+
+
+}
+
+
+.btn-52-activado{
+    border: 2px solid var(--btn52-cartel);
+    box-shadow: 0px 0px 20px var(--btn52-catel-ilu),0px 0px 20px var(--btn52-catel-ilu), 
+    inset 0px 0px 20px var(--btn52-catel-ilu);
+    color: var(--btn52-letras);
+    text-shadow: 0px 0px 5px var(--btn52-letras-ilu), 0px 0px 15px var(--btn52-letras-ilu),
+    0px 0px 20px var(--btn52-letras-ilu);
+
+    animation: btn-52-animacion 1s ease-out infinite;
+}
+
+
+@keyframes btn-52-animacion{
+    0%{
+       opacity: 1;
+    }
+    
+    10%{
+        opacity: .5;
+    }
+
+    20%{
+        opacity: 1;
+    }
+
+    30%{
+        opacity: 1;
+    }
+
+    40%{
+        opacity: .9;
+    }
+
+    50%{
+        opacity: 1;
+    }
+
+    60%{
+        opacity: .7;
+    }
+
+    70%{
+        opacity: 1;
+    }
+
+    80%{
+        opacity: 1;
+    }
+
+    90%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: .7;
+    }
+}
+
+
+@media (max-width: 719px){
+
+    body{
+        overflow: auto;
+    }
+
+   .contenedor{
+        margin: 40px auto;
+   }
+
+    .decoracion-pagina-1{
+        width: 120px;
+        height: 120px;
+        left: 20px;
+        top: 100px;
+    }
+
+    .decoracion-pagina-2{
+        left: 100px;
+        top: 180px;
+    }
+
+    .decoracion-pagina-3{
+        width: 180px;
+        height: 180px;
+        left: 60px;
+        top: 450px;
+    }
+
+}
+
+@media(min-width: 720px) and (max-width:1299px){
+
+    .contenedor{
+        gap: 250px 100px;
+    }
+
+    .decoracion-pagina-1{
+        width: 240px;
+        height: 240px;
+        left: 40px;
+        top: 20px;
+    }
+
+    .decoracion-pagina-2{
+        left: 370px;
+        top: 400px;
+    }
+
+    .decoracion-pagina-3{
+        width: 300px;
+        height: 300px;
+        left: 100px;
+        top: 1000px;
+    }
+}
+
+@media(min-width: 1300px) and (max-width: 1919px){
+
+    .contenedor{
+        gap: 250px 100px;
+    }
+
+    .decoracion-pagina-1{
+        width: 240px;
+        height: 240px;
+        left: 60px;
+        top: 60px;
+    }
+
+    .decoracion-pagina-2{
+        left: 1000px;
+        top: 200px;
+    }
+
+    .decoracion-pagina-3{
+        width: 300px;
+        height: 300px;
+        left: 500px;
+        top: 400px;
+    }
+
+
+}
+
+@media (min-width: 1920px){
+
+    .contenedor{
+        gap: 260px 600px;
+        margin: auto 300px;
+    }
+
+
+    .decoracion-pagina-1{
+        left: 300px;
+    }
+    
+    .decoracion-pagina-2{
+        left: auto;
+        right: 200px;
+        top: 300px;
+    }
+    
+    .decoracion-pagina-3{
+        left: 900px;
+        top: 700px;
+    }
+    
+}
+
